@@ -2,8 +2,6 @@
 
 <img src="https://img.shields.io/badge/Python-4381b3?style=flat-square&logo=Python&logoColor=white"/></a>
 
----
-
 ### ⚙ Development Environment
 
 - Ubuntu 20.04 LTS (WSL2)
