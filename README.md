@@ -1,4 +1,4 @@
-# Alogrithm Study With Python
+# Algorithm Study With Python
 
 <img src="https://img.shields.io/badge/Python-4381b3?style=flat-square&logo=Python&logoColor=white"/></a>
 
