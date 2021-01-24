@@ -4,18 +4,18 @@
 
 ### ⚙ Learning Course
 
-- Programming Intermediate
+- **Programming Intermediate**
 
   Learning Time: 2021/01/24 ~ 2021/01/30
 
-- Programming Advanced
+- **Programming Advanced**
 
   Learning Time: 2021/01/24 ~ 2021/01/30
 
-- Programming Professional
+- **Programming Professional**
 
   Learning Time: 2021/01/24 ~ 2021/01/30
 
-- Programming Solving
+- **Programming Solving**
 
   Learning Time: 2021/01/31 ~ 2021/02/13
