@@ -8,7 +8,7 @@
 
 - Python 3.8.5
 
-  - Lint: Pylint
+  - Linter: Pylint
 
   - Formatter: Black
 
