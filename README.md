@@ -8,6 +8,10 @@
 
 - Python 3.8.5
 
+  - Lint: Pylint
+
+  - Formatter: Black
+
 - Visual Studio Code
 
   - Extensions
@@ -19,8 +23,6 @@
     - Python Extension Pack
 
     - Pylance
-
-    - Prettier
 
     - Bracket Pair Colorizer 2
 
