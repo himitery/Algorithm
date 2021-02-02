@@ -19,17 +19,17 @@ for i in range(case):
         direction = [[-1, 0], [0, 1], [1, 0], [0, -1]]
         next = None
         for d in direction:
-            if current[0] + d[0] in range(size) and current[1] + d[1] in range(size):    
+            if current[0] + d[0] in range(size) and current[1] + d[1] in range(size):
                 if maze[current[0] + d[0]][current[1] + d[1]] == 0:
-                    next = [current[0]+d[0], current[1]+d[1]]
+                    next = [current[0] + d[0], current[1] + d[1]]
                     break
-                elif [current[0]+d[0], current[1]+d[1]] == end:
+                elif [current[0] + d[0], current[1] + d[1]] == end:
                     flag = 1
                     break
 
         if flag != False:
             break
-        
+
         if next is not None:
             maze[current[0]][current[1]] = -1
             track.append(next)
@@ -42,7 +42,4 @@ for i in range(case):
             del track[-1]
             current = track[-1]
 
-    
     print(f"#{i+1} {flag}")
-
-        

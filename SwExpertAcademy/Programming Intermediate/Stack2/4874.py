@@ -21,7 +21,6 @@ for i in range(case):
             elif c == "/":
                 result = int(op1 / op2)
 
-
             del stack[-1]
             del stack[-1]
             stack.append(result)
@@ -30,5 +29,3 @@ for i in range(case):
             break
 
     print(f"#{i+1}", stack[-1] if len(stack) == 1 else "error")
-    
-
