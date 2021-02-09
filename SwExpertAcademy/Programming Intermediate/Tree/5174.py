@@ -48,6 +48,7 @@ class Tree:
             count += 1
             count += self.countNodes(node.left)
             count += self.countNodes(node.right)
+            
         return count
 
 
