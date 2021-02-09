@@ -55,6 +55,7 @@ for i in range(case):
     e, n = list(map(int, input().split()))
 
     tree = Tree()
+    
     numList = list(map(int, input().split()))
     tree.add(None, numList[0])
     for j in range(e):
