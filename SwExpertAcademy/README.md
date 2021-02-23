@@ -6,11 +6,11 @@
 
 - **Programming Intermediate**
 
-  Learning Time: 2021/01/24 ~ 2021/02/12
+  Learning Time: 2021/01/24 ~ 2021/02/24
 
 - **Programming Advanced**
 
-  Learning Time: 2021/02/07 ~
+  Learning Time: None
 
 - **Programming Professional**
 
