@@ -1,7 +1,3 @@
 # Algorithm
 
-## Language
-
-| Language | Version | Formatter |
-|:--------:|:-------:|:---------:|
-|  Python  | 3.9.10  |   Black   |
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=himit0131)](https://solved.ac/himit0131/)
