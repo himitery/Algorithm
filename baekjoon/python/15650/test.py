@@ -1,3 +1,5 @@
+import json
+import os.path
 import unittest
 from io import StringIO
 from unittest.mock import patch
@@ -7,23 +9,15 @@ from parameterized import parameterized
 from .main import Problem
 
 
+def load_sample(filename: str):
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), filename)
+
+    with open(path, "r") as file:
+        return [(case["input"], case["expected"]) for case in json.load(file)]
+
+
 class MyTestCase(unittest.TestCase):
-    @parameterized.expand(
-        [
-            (
-                ["3 1"],
-                ["1", "2", "3"],
-            ),
-            (
-                ["4 2"],
-                ["1 2", "1 3", "1 4", "2 3", "2 4", "3 4"],
-            ),
-            (
-                ["4 4"],
-                ["1 2 3 4"],
-            ),
-        ],
-    )
+    @parameterized.expand(load_sample("sample.json"))
     def test_case(self, case: str, expected: list[str]):
         # When
         with (
