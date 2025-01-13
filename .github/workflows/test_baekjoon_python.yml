@@ -1,0 +1,49 @@
+name: Run Tests for Baekjoon Problems (Python)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.generate-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate matrix
+        id: generate-matrix
+        run: |
+          dirs=$(find baekjoon/python -mindepth 1 -maxdepth 1 -type d)
+          json="["
+          for dir in $dirs; do
+            json+="\"$dir\","
+          done
+          json="${json%,}]"
+          echo "matrix=$json" >> $GITHUB_OUTPUT
+        shell: bash
+
+  run-tests:
+    needs: generate-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dir: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest parameterized
+
+      - name: Run Tests
+        run: |
+          pytest ${{ matrix.dir }}/test_main.py
