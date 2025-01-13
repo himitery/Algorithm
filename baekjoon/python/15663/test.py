@@ -29,7 +29,7 @@ class MyTestCase(unittest.TestCase):
             result = output.getvalue().strip()
 
         # Then
-        self.assertEqual(result, "\n".join(expected))
+        self.assertEqual("\n".join(expected), result)
 
 
 if __name__ == "__main__":
