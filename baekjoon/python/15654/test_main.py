@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 from parameterized import parameterized
 
-from .main import Problem
+from main import Problem
 
 
 def load_sample(filename: str):
@@ -16,7 +16,7 @@ def load_sample(filename: str):
         return [(case["input"], case["expected"]) for case in json.load(file)]
 
 
-class MyTestCase(unittest.TestCase):
+class TestCase(unittest.TestCase):
     @parameterized.expand(load_sample("sample.json"))
     def test_case(self, case: str, expected: list[str]):
         # When
