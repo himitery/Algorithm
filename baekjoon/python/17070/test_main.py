@@ -26,7 +26,7 @@ class TestCase(unittest.TestCase):
         ):
             Problem().solve()
 
-            result = output.getvalue().strip()
+            result = output.getvalue().rstrip()
 
         # Then
         self.assertEqual("\n".join(expected), result)
