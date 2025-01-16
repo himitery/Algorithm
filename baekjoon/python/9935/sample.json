@@ -1,0 +1,20 @@
+[
+  {
+    "input": [
+      "mirkovC4nizCC44",
+      "C4"
+    ],
+    "expected": [
+      "mirkovniz"
+    ]
+  },
+  {
+    "input": [
+      "12ab112ab2ab",
+      "12ab"
+    ],
+    "expected": [
+      "FRULA"
+    ]
+  }
+]
