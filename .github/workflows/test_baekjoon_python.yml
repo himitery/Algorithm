@@ -6,31 +6,44 @@ on:
       - main
 
 jobs:
-  generate-matrix:
+  detect-changes:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.generate-matrix.outputs.matrix }}
+      matrix: ${{ steps.detect-changes.outputs.matrix }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
-      - name: Generate matrix
-        id: generate-matrix
+      - name: Detect changed files
+        id: detect-changes
         run: |
-          dirs=$(find baekjoon/python -mindepth 1 -maxdepth 1 -type d)
+          if git rev-parse HEAD~1 >/dev/null 2>&1; then
+            base_commit="HEAD~1"
+          else
+            base_commit="HEAD"
+          fi
+
+          changed_dirs=$(git diff --name-only $base_commit HEAD | grep '^baekjoon/python' | awk -F'/' '{print $1"/"$2"/"$3}' | sort -u || true)
+
           json="["
-          for dir in $dirs; do
-            json+="\"$dir\","
+          for dir in $changed_dirs; do
+            if [ -d "$dir" ]; then
+              json+="\"$dir\","
+            fi
           done
           json="${json%,}]"
+
           echo "matrix=$json" >> $GITHUB_OUTPUT
         shell: bash
 
   run-tests:
-    needs: generate-matrix
+    needs: detect-changes
     runs-on: ubuntu-latest
+    if: needs.detect-changes.outputs.matrix != '[]'
     strategy:
       matrix:
-        dir: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
+        dir: ${{ fromJson(needs.detect-changes.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v4
 
