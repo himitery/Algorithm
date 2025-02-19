@@ -1,0 +1,47 @@
+[
+  {
+    "input": [
+      "1 10",
+      "10 5"
+    ],
+    "expected": [
+      "5"
+    ]
+  },
+  {
+    "input": [
+      "1 10",
+      "7 2"
+    ],
+    "expected": [
+      "Unknwon Number"
+    ]
+  },
+  {
+    "input": [
+      "3 3",
+      "-3 0"
+    ],
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "input": [
+      "-1 4",
+      "4 0"
+    ],
+    "expected": [
+      "Unknwon Number"
+    ]
+  },
+  {
+    "input": [
+      "0 4",
+      "4 0"
+    ],
+    "expected": [
+      "Unknwon Number"
+    ]
+  }
+]
