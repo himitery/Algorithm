@@ -1,0 +1,34 @@
+[
+  {
+    "input": [
+      "BBCDDECAECBDABADDCEBACCCBDCAABDBADD"
+    ],
+    "expected": [
+      "22"
+    ]
+  },
+  {
+    "input": [
+      "AAAA"
+    ],
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "input": [
+      "ABCDEFGH"
+    ],
+    "expected": [
+      "8"
+    ]
+  },
+  {
+    "input": [
+      "QWERTYTREWQWERT"
+    ],
+    "expected": [
+      "5"
+    ]
+  }
+]
