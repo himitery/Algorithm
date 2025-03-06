@@ -1,0 +1,52 @@
+[
+  {
+    "input": [
+      "ACAYKP",
+      "CAPCAK"
+    ],
+    "expected": [
+      "4",
+      "ACAK"
+    ]
+  },
+  {
+    "input": [
+      "AAAA",
+      "AA"
+    ],
+    "expected": [
+      "2",
+      "AA"
+    ]
+  },
+  {
+    "input": [
+      "AAAA",
+      "AA"
+    ],
+    "expected": [
+      "2",
+      "AA"
+    ]
+  },
+  {
+    "input": [
+      "AA",
+      "AAAA"
+    ],
+    "expected": [
+      "2",
+      "AA"
+    ]
+  },
+  {
+    "input": [
+      "ABACA",
+      "BC"
+    ],
+    "expected": [
+      "2",
+      "BC"
+    ]
+  }
+]
