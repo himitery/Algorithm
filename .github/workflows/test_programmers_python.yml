@@ -1,0 +1,62 @@
+name: Run Tests for Programmers Problems (Python)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.detect-changes.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect changed files
+        id: detect-changes
+        run: |
+          if git rev-parse HEAD~1 >/dev/null 2>&1; then
+            base_commit="HEAD~1"
+          else
+            base_commit="HEAD"
+          fi
+
+          changed_dirs=$(git diff --name-only $base_commit HEAD | grep '^programmers/*/python' | awk -F'/' '{print $1"/"$2"/"$3}' | sort -u || true)
+
+          json="["
+          for dir in $changed_dirs; do
+            if [ -d "$dir" ]; then
+              json+="\"$dir\","
+            fi
+          done
+          json="${json%,}]"
+
+          echo "matrix=$json" >> $GITHUB_OUTPUT
+        shell: bash
+
+  run-tests:
+    needs: detect-changes
+    runs-on: ubuntu-latest
+    if: needs.detect-changes.outputs.matrix != '[]'
+    strategy:
+      matrix:
+        dir: ${{ fromJson(needs.detect-changes.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.8.5"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest parameterized
+
+      - name: Run Tests
+        run: |
+          pytest ${{ matrix.dir }}/test_main.py
