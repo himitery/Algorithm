@@ -1,0 +1,61 @@
+[
+  {
+    "params": [
+      [
+        "AZWQY",
+        "CAABX",
+        "BBDDA",
+        "ACACA"
+      ],
+      [
+        "A",
+        "BB",
+        "A"
+      ]
+    ],
+    "expected": "11"
+  },
+  {
+    "params": [
+      [
+        "HAH",
+        "HBH",
+        "HHH",
+        "HAH",
+        "HBH"
+      ],
+      [
+        "C",
+        "B",
+        "B",
+        "B",
+        "B",
+        "H"
+      ]
+    ],
+    "expected": "4"
+  },
+  {
+    "params": [
+      [
+        "AAAAA",
+        "ABCDA",
+        "AGAEA",
+        "AZAFA",
+        "ZYAAA"
+      ],
+      [
+        "BB",
+        "DD",
+        "Z",
+        "Y",
+        "Z",
+        "G",
+        "C",
+        "E",
+        "F"
+      ]
+    ],
+    "expected": "16"
+  }
+]
