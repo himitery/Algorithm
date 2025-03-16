@@ -13,7 +13,7 @@
         "A"
       ]
     ],
-    "expected": "11"
+    "expected": 11
   },
   {
     "params": [
@@ -33,7 +33,7 @@
         "H"
       ]
     ],
-    "expected": "4"
+    "expected": 4
   },
   {
     "params": [
@@ -56,6 +56,6 @@
         "F"
       ]
     ],
-    "expected": "16"
+    "expected": 16
   }
 ]

@@ -16,12 +16,12 @@ def load_sample(filename: str):
 
 class TestCase(unittest.TestCase):
     @parameterized.expand(load_sample("sample.json"))
-    def test_case(self, params: list, expected: str):
+    def test_case(self, params: list, expected: any):
         # When
         result = solution(*params)
 
         # Then
-        self.assertEqual(expected, str(result))
+        self.assertEqual(expected, result)
 
 
 if __name__ == "__main__":

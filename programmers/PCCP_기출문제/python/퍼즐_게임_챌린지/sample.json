@@ -13,7 +13,7 @@
       ],
       30
     ],
-    "expected": "3"
+    "expected": 3
   },
   {
     "params": [
@@ -31,7 +31,7 @@
       ],
       59
     ],
-    "expected": "2"
+    "expected": 2
   },
   {
     "params": [
@@ -51,7 +51,7 @@
       ],
       1723
     ],
-    "expected": "294"
+    "expected": 294
   },
   {
     "params": [
@@ -69,6 +69,6 @@
       ],
       3456789012
     ],
-    "expected": "39354"
+    "expected": 39354
   }
 ]
