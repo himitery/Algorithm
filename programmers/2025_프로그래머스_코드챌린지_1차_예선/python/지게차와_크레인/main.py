@@ -48,7 +48,3 @@ def find_nested_sides(
                     stack.append((x + dx, y + dy))
 
     return nested
-
-
-if __name__ == "__main__":
-    solution(list(input()), list(input()))

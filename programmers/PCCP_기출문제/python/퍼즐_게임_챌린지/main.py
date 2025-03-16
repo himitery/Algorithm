@@ -21,11 +21,3 @@ def solution(diffs: List[int], times: List[int], limit: int) -> int:
             left = level + 1
 
     return max(1, result)
-
-
-if __name__ == "__main__":
-    solution(
-        list(map(int, input().split())),
-        list(map(int, input().split())),
-        int(input()),
-    )
