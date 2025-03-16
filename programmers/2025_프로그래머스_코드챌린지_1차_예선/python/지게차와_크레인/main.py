@@ -3,7 +3,7 @@ from collections import deque
 from typing import List, Tuple, Set
 
 
-def solution(storage: List[str], requests: List[str]):
+def solution(storage: List[str], requests: List[str]) -> int:
     rows, cols = len(storage), len(storage[0])
 
     sides, visited = init_sides(rows, cols), set()
