@@ -1,0 +1,45 @@
+[
+  {
+    "params": [
+      [
+        1,
+        3,
+        2
+      ],
+      [
+        "diamond",
+        "diamond",
+        "diamond",
+        "iron",
+        "iron",
+        "diamond",
+        "iron",
+        "stone"
+      ]
+    ],
+    "expected": 12
+  },
+  {
+    "params": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        "diamond",
+        "diamond",
+        "diamond",
+        "diamond",
+        "diamond",
+        "iron",
+        "iron",
+        "iron",
+        "iron",
+        "iron",
+        "diamond"
+      ]
+    ],
+    "expected": 50
+  }
+]
