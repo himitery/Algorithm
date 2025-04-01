@@ -1,0 +1,32 @@
+[
+  {
+    "params": [
+      2
+    ],
+    "expected": 3
+  },
+  {
+    "params": [
+      3
+    ],
+    "expected": 10
+  },
+  {
+    "params": [
+      4
+    ],
+    "expected": 23
+  },
+  {
+    "params": [
+      5
+    ],
+    "expected": 62
+  },
+  {
+    "params": [
+      6
+    ],
+    "expected": 170
+  }
+]
