@@ -4,11 +4,7 @@ on:
   push:
     branches:
       - main
-
-env:
-  DEFAULT_PYTHON_VERSION: 3.12
-  PROGRAMMERS_PYTHON_VERSION: 3.8
-
+      
 jobs:
   detect-changes:
     runs-on: ubuntu-latest
@@ -23,28 +19,27 @@ jobs:
         id: detect-changes
         run: |
           git config core.quotepath false
-          
+
           if git rev-parse HEAD~1 >/dev/null 2>&1; then
             base_commit="HEAD~1"
           else
             base_commit="HEAD"
           fi
-          
-          changed_dirs=$(git diff --name-only $base_commit HEAD | sed 's/^"//;s/"$//' | grep -E '.py$' | awk -F'/' '{OFS="/"; $NF=""; print $0}' | sed 's/\/$//' | sort -u || true)
+
+          # 파이썬 파일이 수정된 디렉토리만 추출
+          changed_dirs=$(git diff --name-only $base_commit HEAD | grep -E '\.py$' | awk -F'/' '{OFS="/"; $NF=""; print $0}' | sed 's/\/$//' | sort -u || true)
 
           json="["
           for dir in $changed_dirs; do
             if [ -d "$dir" ]; then
-              json+="{\"dir\":\"$dir\","
-              if [[ "$dir" == programmers* ]]; then
-                json+="\"python_version\":\"${{ env.PROGRAMMERS_PYTHON_VERSION }}\"},"
-              else
-                json+="\"python_version\":\"${{ env.DEFAULT_PYTHON_VERSION }}\"},"
-              fi
+              root=$(echo "$dir" | awk -F'/' '{print $1"/"$2}')
+              version_file="$root/.python-version"
+          
+              json+="{\"dir\":\"$dir\",\"python_version\":\"$(cat "$version_file" | tr -d '\r\n')\"},"
             fi
           done
-          json="${json%,}]"
 
+          json="${json%,}]"
           echo "matrix=$json" >> $GITHUB_OUTPUT
         shell: bash
 
@@ -58,7 +53,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Set up Python ${{ matrix.python_version }}
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python_version }}
@@ -68,6 +63,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest parameterized
 
-      - name: Run Tests
+      - name: Run Tests in ${{ matrix.dir }}
         run: |
           pytest ${{ matrix.dir }}/test_main.py
