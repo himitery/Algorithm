@@ -1,0 +1,51 @@
+[
+  {
+    "input": [
+      "3",
+      "2 B A",
+      "4 A B C D",
+      "2 A C"
+    ],
+    "expected": [
+      "A",
+      "--B",
+      "----C",
+      "------D",
+      "--C",
+      "B",
+      "--A"
+    ]
+  },
+  {
+    "input": [
+      "4",
+      "2 KIWI BANANA",
+      "2 KIWI APPLE",
+      "2 APPLE APPLE",
+      "3 APPLE BANANA KIWI"
+    ],
+    "expected": [
+      "APPLE",
+      "--APPLE",
+      "--BANANA",
+      "----KIWI",
+      "KIWI",
+      "--APPLE",
+      "--BANANA"
+    ]
+  },
+  {
+    "input": [
+      "2",
+      "4 A A B A",
+      "3 A A A"
+    ],
+    "expected": [
+      "A",
+      "--A",
+      "----A",
+      "----B",
+      "------A"
+    ]
+  }
+]
