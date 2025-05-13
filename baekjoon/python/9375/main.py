@@ -6,24 +6,20 @@ read = lambda: sys.stdin.readline().rstrip()
 
 class Problem:
     def __init__(self):
-        self.case: list[dict[str, list[str]]] = []
-        for _ in range(int(read())):
-            data: dict[str, list[str]] = defaultdict(list[str])
-            for _ in range(int(read())):
-                name, costume_type = read().split()
-                data[costume_type].append(name)
-            self.case.append(data)
+        self.n = int(read())
+        self.data = defaultdict(set[str])
+        for _ in range(self.n):
+            name, costume_type = read().split()
+            self.data[costume_type].add(name)
 
     def solve(self) -> None:
-        for case in self.case:
-            result: int = 1
-            number_of_items: list[int] = [len(case[key]) for key in case.keys()]
+        result = 1
+        for item in self.data.values():
+            result *= len(item) + 1
 
-            for num in number_of_items:
-                result *= num + 1
-
-            print(result - 1)
+        print(result - 1)
 
 
 if __name__ == "__main__":
-    Problem().solve()
+    for _ in range(int(read())):
+        Problem().solve()

@@ -1,5 +1,6 @@
 import json
 import os.path
+import sys
 import unittest
 from io import StringIO
 from unittest.mock import patch
@@ -24,7 +25,8 @@ class TestCase(unittest.TestCase):
             patch("sys.stdin.readline", side_effect=case),
             patch("sys.stdout", new_callable=StringIO) as output,
         ):
-            Problem().solve()
+            for _ in range(int(sys.stdin.readline().rstrip())):
+                Problem().solve()
 
             result = output.getvalue().rstrip()
 
