@@ -1,0 +1,14 @@
+[
+  {
+    "params": [
+      16
+    ],
+    "expected": 6
+  },
+  {
+    "params": [
+      2554
+    ],
+    "expected": 16
+  }
+]
