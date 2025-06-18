@@ -1,0 +1,50 @@
+[
+  {
+    "params": [
+      [
+        "leo",
+        "kiki",
+        "eden"
+      ],
+      [
+        "eden",
+        "kiki"
+      ]
+    ],
+    "expected": "leo"
+  },
+  {
+    "params": [
+      [
+        "marina",
+        "josipa",
+        "nikola",
+        "vinko",
+        "filipa"
+      ],
+      [
+        "josipa",
+        "filipa",
+        "marina",
+        "nikola"
+      ]
+    ],
+    "expected": "vinko"
+  },
+  {
+    "params": [
+      [
+        "mislav",
+        "stanko",
+        "mislav",
+        "ana"
+      ],
+      [
+        "stanko",
+        "ana",
+        "mislav"
+      ]
+    ],
+    "expected": "mislav"
+  }
+]
