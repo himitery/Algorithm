@@ -1,0 +1,27 @@
+[
+  {
+    "input": [
+      "4 3",
+      "red",
+      "blue",
+      "purple",
+      "orange",
+      "shift",
+      "joker",
+      "noon",
+      "5",
+      "redshift",
+      "bluejoker",
+      "purplenoon",
+      "orangeshift",
+      "whiteblue"
+    ],
+    "expected": [
+      "Yes",
+      "Yes",
+      "Yes",
+      "Yes",
+      "No"
+    ]
+  }
+]
