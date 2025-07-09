@@ -1,0 +1,34 @@
+[
+  {
+    "input": [
+      "A*(B+C)"
+    ],
+    "expected": [
+      "ABC+*"
+    ]
+  },
+  {
+    "input": [
+      "A+B"
+    ],
+    "expected": [
+      "AB+"
+    ]
+  },
+  {
+    "input": [
+      "A+B*C"
+    ],
+    "expected": [
+      "ABC*+"
+    ]
+  },
+  {
+    "input": [
+      "A+B*C-D/E"
+    ],
+    "expected": [
+      "ABC*+DE/-"
+    ]
+  }
+]
