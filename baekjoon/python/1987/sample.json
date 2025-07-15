@@ -1,0 +1,36 @@
+[
+  {
+    "input": [
+      "2 4",
+      "CAAB",
+      "ADCB"
+    ],
+    "expected": [
+      "3"
+    ]
+  },
+  {
+    "input": [
+      "3 6",
+      "HFDFFB",
+      "AJHGDH",
+      "DGAGEH"
+    ],
+    "expected": [
+      "6"
+    ]
+  },
+  {
+    "input": [
+      "5 5",
+      "IEFCJ",
+      "FHFKC",
+      "FFALF",
+      "HFGCF",
+      "HMCHH"
+    ],
+    "expected": [
+      "10"
+    ]
+  }
+]
