@@ -1,0 +1,22 @@
+[
+  {
+    "input": [
+      "1",
+      "13",
+      "OOIOIOIOIIOII"
+    ],
+    "expected": [
+      "4"
+    ]
+  },
+  {
+    "input": [
+      "2",
+      "13",
+      "OOIOIOIOIIOII"
+    ],
+    "expected": [
+      "2"
+    ]
+  }
+]
