@@ -1,0 +1,24 @@
+[
+  {
+    "input": [
+      "3 5",
+      "OOOPO",
+      "OIOOX",
+      "OOOXP"
+    ],
+    "expected": [
+      "1"
+    ]
+  },
+  {
+    "input": [
+      "3 3",
+      "IOX",
+      "OXP",
+      "XPP"
+    ],
+    "expected": [
+      "TT"
+    ]
+  }
+]
